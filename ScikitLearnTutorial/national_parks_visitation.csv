@@ -1,0 +1,49 @@
+park_code,park_name,park_type,state,date,visitors,area_sq_miles,annual_precipitation_inches,elevation_ft
+GRSM,Great Smoky Mountains National Park,National Park,North Carolina,2010-01-01,769000,522.426,61.7,6500
+GRSM,Great Smoky Mountains National Park,National Park,North Carolina,2010-02-01,543000,522.426,61.7,6500
+GRSM,Great Smoky Mountains National Park,National Park,North Carolina,2010-03-01,875000,522.426,61.7,6500
+GRSM,Great Smoky Mountains National Park,National Park,North Carolina,2010-04-01,1025000,522.426,61.7,6500
+GRSM,Great Smoky Mountains National Park,National Park,North Carolina,2010-05-01,1256000,522.426,61.7,6500
+GRSM,Great Smoky Mountains National Park,National Park,North Carolina,2010-06-01,1458000,522.426,61.7,6500
+GRSM,Great Smoky Mountains National Park,National Park,North Carolina,2010-07-01,1689000,522.426,61.7,6500
+GRSM,Great Smoky Mountains National Park,National Park,North Carolina,2010-08-01,1654000,522.426,61.7,6500
+GRSM,Great Smoky Mountains National Park,National Park,North Carolina,2010-09-01,1123000,522.426,61.7,6500
+GRSM,Great Smoky Mountains National Park,National Park,North Carolina,2010-10-01,1345000,522.426,61.7,6500
+GRSM,Great Smoky Mountains National Park,National Park,North Carolina,2010-11-01,785000,522.426,61.7,6500
+GRSM,Great Smoky Mountains National Park,National Park,North Carolina,2010-12-01,623000,522.426,61.7,6500
+YELL,Yellowstone National Park,National Park,Wyoming,2010-01-01,45600,3471.5,20.5,8000
+YELL,Yellowstone National Park,National Park,Wyoming,2010-02-01,38900,3471.5,20.5,8000
+YELL,Yellowstone National Park,National Park,Wyoming,2010-03-01,52300,3471.5,20.5,8000
+YELL,Yellowstone National Park,National Park,Wyoming,2010-04-01,67800,3471.5,20.5,8000
+YELL,Yellowstone National Park,National Park,Wyoming,2010-05-01,215600,3471.5,20.5,8000
+YELL,Yellowstone National Park,National Park,Wyoming,2010-06-01,654300,3471.5,20.5,8000
+YELL,Yellowstone National Park,National Park,Wyoming,2010-07-01,985600,3471.5,20.5,8000
+YELL,Yellowstone National Park,National Park,Wyoming,2010-08-01,876500,3471.5,20.5,8000
+YELL,Yellowstone National Park,National Park,Wyoming,2010-09-01,543200,3471.5,20.5,8000
+YELL,Yellowstone National Park,National Park,Wyoming,2010-10-01,198700,3471.5,20.5,8000
+YELL,Yellowstone National Park,National Park,Wyoming,2010-11-01,87600,3471.5,20.5,8000
+YELL,Yellowstone National Park,National Park,Wyoming,2010-12-01,51200,3471.5,20.5,8000
+ZION,Zion National Park,National Park,Utah,2010-01-01,98500,146.6,15.9,6500
+ZION,Zion National Park,National Park,Utah,2010-02-01,87600,146.6,15.9,6500
+ZION,Zion National Park,National Park,Utah,2010-03-01,123500,146.6,15.9,6500
+ZION,Zion National Park,National Park,Utah,2010-04-01,234600,146.6,15.9,6500
+ZION,Zion National Park,National Park,Utah,2010-05-01,345200,146.6,15.9,6500
+ZION,Zion National Park,National Park,Utah,2010-06-01,456300,146.6,15.9,6500
+ZION,Zion National Park,National Park,Utah,2010-07-01,543200,146.6,15.9,6500
+ZION,Zion National Park,National Park,Utah,2010-08-01,498700,146.6,15.9,6500
+ZION,Zion National Park,National Park,Utah,2010-09-01,387600,146.6,15.9,6500
+ZION,Zion National Park,National Park,Utah,2010-10-01,276500,146.6,15.9,6500
+ZION,Zion National Park,National Park,Utah,2010-11-01,154300,146.6,15.9,6500
+ZION,Zion National Park,National Park,Utah,2010-12-01,112400,146.6,15.9,6500
+ACAD,Acadia National Park,National Park,Maine,2010-01-01,12500,47.4,55.8,1530
+ACAD,Acadia National Park,National Park,Maine,2010-02-01,9800,47.4,55.8,1530
+ACAD,Acadia National Park,National Park,Maine,2010-03-01,15600,47.4,55.8,1530
+ACAD,Acadia National Park,National Park,Maine,2010-04-01,23400,47.4,55.8,1530
+ACAD,Acadia National Park,National Park,Maine,2010-05-01,54300,47.4,55.8,1530
+ACAD,Acadia National Park,National Park,Maine,2010-06-01,98700,47.4,55.8,1530
+ACAD,Acadia National Park,National Park,Maine,2010-07-01,156400,47.4,55.8,1530
+ACAD,Acadia National Park,National Park,Maine,2010-08-01,165300,47.4,55.8,1530
+ACAD,Acadia National Park,National Park,Maine,2010-09-01,98700,47.4,55.8,1530
+ACAD,Acadia National Park,National Park,Maine,2010-10-01,65400,47.4,55.8,1530
+ACAD,Acadia National Park,National Park,Maine,2010-11-01,28700,47.4,55.8,1530
+ACAD,Acadia National Park,National Park,Maine,2010-12-01,15600,47.4,55.8,1530
