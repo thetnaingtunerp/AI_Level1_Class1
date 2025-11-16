@@ -14,4 +14,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 import cv2
 import os
+import glob
 
+data = []
+labels = []
+
+img_dims = (96 , 96, 3)
+
+
+image_files = [f for f in glob.glob(r'facedataset'+"/**/*", recursive=True) if not os.path.isdir(f)]
