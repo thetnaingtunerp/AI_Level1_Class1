@@ -53,7 +53,7 @@ trainY = to_categorical(trainY, num_classes=2)
 testY = to_categorical(testY, num_classes=2)
 
 
-ImageDataGenerator(
+aug = ImageDataGenerator(
     rotation_range = 25,
     width_shift_range = 0.1,
     height_shift_range = 0.1, 
@@ -61,9 +61,9 @@ ImageDataGenerator(
     zoom_range=0.2,
     horizontal_flip=True,
     fill_mode='nearest'
-
-    
 )
+
+# model build 
 
 
 
