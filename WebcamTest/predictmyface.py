@@ -18,7 +18,7 @@ while webcam.isOpened():
         (startx, starty) = f[0],f[1]
         (endx, endy) =f[2], f[3]
         cv2.rectangle(frame, (startx, starty), (endx, endy), (255,0,0),2)
-        face_crop = np.copy(frame[starty:endy, startx, endx])
+        face_crop = np.copy(frame[starty:endy, startx:endx])
         if (face_crop.shape[0]) < 10 or (face_crop.shape[1] <10):
             continue
         
@@ -37,7 +37,7 @@ while webcam.isOpened():
         Y = starty - 10 if starty -10 > 10 else starty +10
         
         cv2.putText(frame, label, (startx, Y), cv2.FONT_HERSHEY_SIMPLEX,
-                    0.5, (0,0,255), 2)
+                    0.7, (0,0,255), 2)
     cv2.imshow("MyFace", frame)
     
     if cv2.waitKey(1) & 0xFF == ord('q'):
