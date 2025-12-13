@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TensorFlow Object Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 TensorFlow Object Detection</h1>
+            <p>Upload an image to detect objects using TensorFlow and Flask</p>
+        </header>
+
+        <div class="upload-section">
+            <form id="uploadForm" enctype="multipart/form-data">
+                <div class="file-input-wrapper">
+                    <input type="file" id="imageInput" accept="image/*" required>
+                    <label for="imageInput" class="file-label">
+                        📁 Choose Image
+                    </label>
+                </div>
+                <button type="submit" class="detect-btn">Detect Objects</button>
+            </form>
+        </div>
+
+        <div class="webcam-section">
+            <a href="/webcam" class="webcam-btn">🎥 Try Webcam Detection</a>
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Processing image...</p>
+        </div>
+
+        <div id="results" class="results hidden">
+            <div class="image-container">
+                <h3>Detection Results</h3>
+                <div id="imageResult"></div>
+            </div>
+            
+            <div class="detections-container">
+                <h3>Detected Objects (<span id="detectionCount">0</span>)</h3>
+                <div id="detectionsList" class="detections-list"></div>
+            </div>
+        </div>
+
+        <div id="error" class="error hidden"></div>
+    </div>
+
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const fileInput = document.getElementById('imageInput');
+            const file = fileInput.files[0];
+            
+            if (!file) {
+                showError('Please select an image file');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('image', file);
+
+            showLoading();
+            hideResults();
+            hideError();
+
+            try {
+                const response = await fetch('/detect', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    showResults(data);
+                } else {
+                    showError(data.error || 'Detection failed');
+                }
+            } catch (error) {
+                showError('Network error: ' + error.message);
+            } finally {
+                hideLoading();
+            }
+        });
+
+        function showLoading() {
+            document.getElementById('loading').classList.remove('hidden');
+        }
+
+        function hideLoading() {
+            document.getElementById('loading').classList.add('hidden');
+        }
+
+        function showResults(data) {
+            const resultsDiv = document.getElementById('results');
+            const imageResult = document.getElementById('imageResult');
+            const detectionsList = document.getElementById('detectionsList');
+            const detectionCount = document.getElementById('detectionCount');
+
+            // Display image
+            imageResult.innerHTML = `<img src="${data.image}" alt="Detection Result">`;
+            
+            // Display detections
+            detectionCount.textContent = data.count;
+            detectionsList.innerHTML = '';
+            
+            if (data.detections.length > 0) {
+                data.detections.forEach(detection => {
+                    const detectionElement = document.createElement('div');
+                    detectionElement.className = 'detection-item';
+                    detectionElement.innerHTML = `
+                        <strong>${detection.class}</strong>
+                        <span>Confidence: ${(detection.score * 100).toFixed(1)}%</span>
+                    `;
+                    detectionsList.appendChild(detectionElement);
+                });
+            } else {
+                detectionsList.innerHTML = '<p>No objects detected with confidence > 50%</p>';
+            }
+
+            resultsDiv.classList.remove('hidden');
+        }
+
+        function hideResults() {
+            document.getElementById('results').classList.add('hidden');
+        }
+
+        function showError(message) {
+            const errorDiv = document.getElementById('error');
+            errorDiv.textContent = message;
+            errorDiv.classList.remove('hidden');
+        }
+
+        function hideError() {
+            document.getElementById('error').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
